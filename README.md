@@ -12,6 +12,9 @@ i great bomber for iranian letsgo!
   ```sh
   $ pip install user-agent
   $ pip install urllib3
+     or
+  $ pip install -r requirements.txt
+
   ```
 
 ### Installation
@@ -25,3 +28,9 @@ i great bomber for iranian letsgo!
    python LasterBomber.py
    ```
 3. enjoy!
+
+
+
+<!-- Our social links -->
+
+
