@@ -50,7 +50,7 @@ def okorosh(phone):
     try:
         okR = post(timeout=5, url=okU, headers=okH, json=okJ).text
         if 'success' in okR:
-            print(f'{g}(OfoghKourosh) {w}raft to kos madresh')
+            print(f'{g}(OfoghKourosh) {w}code was send')
             return True
     except:
         pass
@@ -1758,7 +1758,7 @@ def drdr(phone):
     try:
         drdr = post(timeout=5, url=dru, headers=drh, params={"phoneNumber":phone ,"userType":"PATIENT"}).json()
         if drdr['status'] == 'success':
-            print(f'{g}(DrDr) {w}raft to kos madresh')
+            print(f'{g}(DrDr) {w}code was send')
             return True
     except:
         pass
