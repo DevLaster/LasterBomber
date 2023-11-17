@@ -3,7 +3,17 @@ i great bomber for iranian letsgo!
 
  <h1 align="center">LasterBomber- Discord : lasterfor3ver</h1>
 
- <!--INSTALLION -->
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+LasterBomber is a Powefull script made by lasterfor3ver with more than +200 API for iran
+we highly recommend dont use this tools to Destruct people 
+
+Note: this script is so powerfull so we dont have responsibility for using this tool so becarefull
+
+
+
+ <!--Getting started -->
 
  ### Cmd for install Libraries
 
