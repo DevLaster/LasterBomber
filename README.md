@@ -24,4 +24,4 @@ i great bomber for iranian letsgo!
    ```
    python LasterBomber.py
    ```
-3.enjoy!
+3. enjoy!
