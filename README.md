@@ -27,7 +27,11 @@ i great bomber for iranian letsgo!
    ```
    python LasterBomber.py
    ```
-3. enjoy!
+3. Enter phone number / Like 09123456789
+
+4. Enter the Speed / 0.1 for default
+
+5. Enjoy (:
 
 
 
